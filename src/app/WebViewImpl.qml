@@ -699,9 +699,14 @@ WebView {
         }
 
     onFullScreenRequested: function(request) {
-        // twice because of QTBUG-84313
-        webview.zoomFactor = 1.0;
-        webview.zoomFactor = 1.0;
+        if (webview.isFullSceeen) {
+          webview.zoomController.refresh();
+        }
+        else {
+          // twice because of QTBUG-84313
+          webview.zoomFactor = 1.0;
+          webview.zoomFactor = 1.0;
+        }
         request.accept();
     }
 
