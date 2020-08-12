@@ -36,8 +36,8 @@ Rectangle {
     }
     
     ColorOverlay {
-        anchors.fill: bug
-        source: bug
+        anchors.fill: tabShadow
+        source: tabShadow
         color: theme.palette.normal.background
     }
 
